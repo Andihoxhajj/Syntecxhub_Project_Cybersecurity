@@ -1,11 +1,15 @@
 import socket
 import threading
 from datetime import datetime
+import errno
 
-# Lock for clean printing
+# Locks for clean printing and thread-safe result writing
 print_lock = threading.Lock()
+results_lock = threading.Lock()
 
-open_ports = []
+# port -> status ("OPEN", "CLOSED", "TIMEOUT", "ERROR: ...")
+scan_results = {}
+
 
 def scan_port(host, port, timeout=1):
     try:
@@ -14,16 +18,31 @@ def scan_port(host, port, timeout=1):
         result = s.connect_ex((host, port))
         s.close()
 
-        with print_lock:
-            if result == 0:
-                print(f"[OPEN] Port {port}")
-                open_ports.append(port)
-            else:
-                print(f"[CLOSED] Port {port}")
+        # Distinguish between closed and timeout if possible
+        if result == 0:
+            status = "OPEN"
+        elif result == errno.ETIMEDOUT:
+            status = "TIMEOUT"
+        else:
+            status = "CLOSED"
 
+        with results_lock:
+            scan_results[port] = status
+
+        with print_lock:
+            print(f"[{status}] Port {port}")
+
+    except socket.timeout:
+        with results_lock:
+            scan_results[port] = "TIMEOUT"
+        with print_lock:
+            print(f"[TIMEOUT] Port {port}")
     except socket.error as e:
+        with results_lock:
+            scan_results[port] = f"ERROR: {e}"
         with print_lock:
             print(f"[ERROR] Port {port}: {e}")
+
 
 def start_scan(host, start_port, end_port):
     print(f"\nScanning {host} from port {start_port} to {end_port}")
@@ -39,16 +58,21 @@ def start_scan(host, start_port, end_port):
     for t in threads:
         t.join()
 
-    save_results(host)
+    save_results(host, start_port, end_port)
 
-def save_results(host):
+
+def save_results(host, start_port, end_port):
     filename = f"scan_{host}.txt"
     with open(filename, "w") as f:
-        f.write(f"Open ports for {host}:\n")
-        for port in open_ports:
-            f.write(f"{port}\n")
+        f.write(
+            f"Scan results for {host} (ports {start_port}-{end_port}) at {datetime.now()}:\n"
+        )
+        for port in range(start_port, end_port + 1):
+            status = scan_results.get(port, "NOT_SCANNED")
+            f.write(f"Port {port}: {status}\n")
 
     print(f"\nResults saved to {filename}")
+
 
 if __name__ == "__main__":
     host = input("Enter host (example: scanme.nmap.org): ")

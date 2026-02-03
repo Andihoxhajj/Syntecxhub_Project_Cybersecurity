@@ -1,2 +1,5 @@
-Open ports for scanme.nmap.org:
-80
+Scan results for scanme.nmap.org (ports 79-82) at 2026-02-03 10:57:00.647000:
+Port 79: ERROR: [Errno 8] nodename nor servname provided, or not known
+Port 80: ERROR: [Errno 8] nodename nor servname provided, or not known
+Port 81: ERROR: [Errno 8] nodename nor servname provided, or not known
+Port 82: ERROR: [Errno 8] nodename nor servname provided, or not known

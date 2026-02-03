@@ -1,5 +1,62 @@
-Scan results for scanme.nmap.org (ports 79-82) at 2026-02-03 10:57:00.647000:
-Port 79: ERROR: [Errno 8] nodename nor servname provided, or not known
-Port 80: ERROR: [Errno 8] nodename nor servname provided, or not known
-Port 81: ERROR: [Errno 8] nodename nor servname provided, or not known
-Port 82: ERROR: [Errno 8] nodename nor servname provided, or not known
+Scan results for scanme.nmap.org (ports 30-90) at 2026-02-03 10:59:51.306522:
+Port 30: CLOSED
+Port 31: CLOSED
+Port 32: CLOSED
+Port 33: CLOSED
+Port 34: CLOSED
+Port 35: CLOSED
+Port 36: CLOSED
+Port 37: CLOSED
+Port 38: CLOSED
+Port 39: CLOSED
+Port 40: CLOSED
+Port 41: CLOSED
+Port 42: CLOSED
+Port 43: CLOSED
+Port 44: CLOSED
+Port 45: CLOSED
+Port 46: CLOSED
+Port 47: CLOSED
+Port 48: CLOSED
+Port 49: CLOSED
+Port 50: CLOSED
+Port 51: CLOSED
+Port 52: CLOSED
+Port 53: CLOSED
+Port 54: CLOSED
+Port 55: CLOSED
+Port 56: CLOSED
+Port 57: CLOSED
+Port 58: CLOSED
+Port 59: CLOSED
+Port 60: CLOSED
+Port 61: CLOSED
+Port 62: CLOSED
+Port 63: CLOSED
+Port 64: CLOSED
+Port 65: CLOSED
+Port 66: CLOSED
+Port 67: CLOSED
+Port 68: CLOSED
+Port 69: CLOSED
+Port 70: CLOSED
+Port 71: CLOSED
+Port 72: CLOSED
+Port 73: CLOSED
+Port 74: CLOSED
+Port 75: CLOSED
+Port 76: CLOSED
+Port 77: CLOSED
+Port 78: CLOSED
+Port 79: CLOSED
+Port 80: OPEN
+Port 81: CLOSED
+Port 82: CLOSED
+Port 83: CLOSED
+Port 84: CLOSED
+Port 85: CLOSED
+Port 86: CLOSED
+Port 87: CLOSED
+Port 88: CLOSED
+Port 89: CLOSED
+Port 90: CLOSED

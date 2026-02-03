@@ -25,6 +25,33 @@ class Entry:
     notes: str = ""
 
 
+def create_sample_entries() -> List[Entry]:
+    """Create some demo entries so every option has something to work with."""
+    return [
+        Entry(
+            name="Gmail",
+            username="you@example.com",
+            password="Gm@il-Demo-Pass-123",
+            url="https://mail.google.com",
+            notes="Demo Gmail account password.",
+        ),
+        Entry(
+            name="Facebook",
+            username="you.fb",
+            password="Fb-Demo-Pass-456!",
+            url="https://facebook.com",
+            notes="Demo Facebook account password.",
+        ),
+        Entry(
+            name="Github",
+            username="andihoxhaj",
+            password="Gh-Demo-Pass-789?",
+            url="https://github.com",
+            notes="Demo GitHub account password.",
+        ),
+    ]
+
+
 def _derive_key(password: str, salt: bytes) -> bytes:
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
@@ -136,6 +163,12 @@ def main() -> None:
             print(f"Loaded {len(entries)} entries.")
         else:
             print("New vault (no existing entries).")
+            use_samples = input(
+                "Create some demo entries so you can test all options? (y/N): "
+            ).strip().lower()
+            if use_samples == "y":
+                entries = create_sample_entries()
+                print(f"Added {len(entries)} demo entries. Remember to save.")
     except ValueError as e:
         print(e)
         sys.exit(1)

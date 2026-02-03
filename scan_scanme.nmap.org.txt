@@ -1,0 +1,2 @@
+Open ports for scanme.nmap.org:
+80

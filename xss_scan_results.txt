@@ -1,0 +1,69 @@
+Web Vulnerability Scanner - XSS Scan Results
+============================================================
+Scan completed at: 2026-02-21 11:44:34.586043
+Total tests: 20
+
+Vulnerable endpoints: 3
+Suspicious endpoints: 17
+Safe endpoints: 0
+
+============================================================
+
+VULNERABLE ENDPOINTS:
+------------------------------------------------------------
+
+Timestamp: 2026-02-21T11:44:15.559436
+URL: http://testphp.vulnweb.com/search.php?test=query
+Parameter: test
+Payload: <script>alert('XSS')</script>
+Status: VULNERABLE
+Details: XSS payload reflected in response (Status: 200)
+
+Timestamp: 2026-02-21T11:44:16.509932
+URL: http://testphp.vulnweb.com/search.php?test=query
+Parameter: test
+Payload: <script>alert(String.fromCharCode(88,83,83))</script>
+Status: VULNERABLE
+Details: XSS payload reflected in response (Status: 200)
+
+Timestamp: 2026-02-21T11:44:30.682178
+URL: http://testphp.vulnweb.com/search.php?test=query
+Parameter: test
+Payload: '"><script>alert('XSS')</script>
+Status: VULNERABLE
+Details: XSS payload reflected in response (Status: 200)
+
+
+SUSPICIOUS ENDPOINTS:
+------------------------------------------------------------
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+
+URL: http://testphp.vulnweb.com/search.php?test=query | Param: test
+Info: Response contains script tags
+

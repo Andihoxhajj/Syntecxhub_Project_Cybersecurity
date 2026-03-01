@@ -1,4 +1,12 @@
-Scan results for scanme.nmap.org (ports 30-90) at 2026-02-03 10:59:51.306522:
+Scan results for scanme.nmap.org (ports 22-80) at 2026-03-01 12:13:24.987555:
+Port 22: OPEN
+Port 23: CLOSED
+Port 24: CLOSED
+Port 25: CLOSED
+Port 26: CLOSED
+Port 27: CLOSED
+Port 28: CLOSED
+Port 29: CLOSED
 Port 30: CLOSED
 Port 31: CLOSED
 Port 32: CLOSED
@@ -50,13 +58,3 @@ Port 77: CLOSED
 Port 78: CLOSED
 Port 79: CLOSED
 Port 80: OPEN
-Port 81: CLOSED
-Port 82: CLOSED
-Port 83: CLOSED
-Port 84: CLOSED
-Port 85: CLOSED
-Port 86: CLOSED
-Port 87: CLOSED
-Port 88: CLOSED
-Port 89: CLOSED
-Port 90: CLOSED
